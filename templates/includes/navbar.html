@@ -1,52 +1,90 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+{% load static %}
 
-<div class="container">
+<!-- Top Contact Bar -->
+<div class="top-bar">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
 
-<a class="navbar-brand fw-bold" href="/">🧠 Sharayu Manobal Kendra</a>
+            <div>
+                <i class="fa-solid fa-phone"></i> +91 98765 43210
+            </div>
 
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-data-bs-target="#navbarNav">
+            <div>
+                <i class="fa-solid fa-envelope"></i> info@sharayumanobal.com
+            </div>
 
-<span class="navbar-toggler-icon"></span>
+            <div>
+                <i class="fa-solid fa-clock"></i> Mon - Sat : 9:00 AM - 7:00 PM
+            </div>
 
-</button>
-
-<div class="collapse navbar-collapse" id="navbarNav">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="/">Home</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#">About</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#">Services</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#">Gallery</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#">Blogs</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#">Appointment</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#">Contact</a>
-</li>
-
-</ul>
-
+        </div>
+    </div>
 </div>
 
-</div>
+<!-- Main Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand d-flex align-items-center" href="/">
+
+            <img src="{% static 'images/logo.png' %}"
+                 width="50"
+                 class="me-2"
+                 alt="Logo">
+
+            <strong>Sharayu Manobal Kendra</strong>
+
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gallery</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blogs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <a href="#"
+                       class="btn btn-primary rounded-pill px-4">
+                        Book Appointment
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
 
 </nav>
