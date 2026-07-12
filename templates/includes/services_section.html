@@ -2,6 +2,7 @@
 
     <div class="container">
 
+        <!-- Section Heading -->
         <div class="text-center mb-5">
 
             <span class="section-subtitle">
@@ -19,9 +20,10 @@
 
         </div>
 
+        <!-- Dynamic Services -->
         <div class="row g-4">
 
-            <!-- Service 1 -->
+            {% for service in services %}
 
             <div class="col-md-6 col-lg-4">
 
@@ -29,16 +31,19 @@
 
                     <div class="service-icon">
 
-                        <i class="fa-solid fa-brain"></i>
+                        <i class="{{ service.icon }}"></i>
 
                     </div>
 
-                    <h4>Individual Counselling</h4>
+                    {% if service.image %}
+                    <img src="{{ service.image.url }}"
+                         class="img-fluid rounded mb-3"
+                         alt="{{ service.title }}">
+                    {% endif %}
 
-                    <p>
-                        One-to-one counselling sessions to improve emotional
-                        well-being and mental health.
-                    </p>
+                    <h4>{{ service.title }}</h4>
+
+                    <p>{{ service.short_description }}</p>
 
                     <a href="#" class="btn btn-outline-primary">
                         Learn More
@@ -48,140 +53,21 @@
 
             </div>
 
-            <!-- Service 2 -->
+            {% empty %}
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-12">
 
-                <div class="service-card">
+                <div class="alert alert-warning text-center">
 
-                    <div class="service-icon">
+                    <h5>No Services Found</h5>
 
-                        <i class="fa-solid fa-heart"></i>
-
-                    </div>
-
-                    <h4>Marriage Counselling</h4>
-
-                    <p>
-                        Strengthen relationships through professional guidance
-                        and communication support.
-                    </p>
-
-                    <a href="#" class="btn btn-outline-primary">
-                        Learn More
-                    </a>
+                    <p>Please add services from the Django Admin Panel.</p>
 
                 </div>
 
             </div>
 
-            <!-- Service 3 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-
-                        <i class="fa-solid fa-child"></i>
-
-                    </div>
-
-                    <h4>Child Psychology</h4>
-
-                    <p>
-                        Helping children overcome emotional and behavioural
-                        challenges with expert care.
-                    </p>
-
-                    <a href="#" class="btn btn-outline-primary">
-                        Learn More
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- Service 4 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-
-                        <i class="fa-solid fa-graduation-cap"></i>
-
-                    </div>
-
-                    <h4>Career Guidance</h4>
-
-                    <p>
-                        Helping students and professionals make confident career
-                        decisions.
-                    </p>
-
-                    <a href="#" class="btn btn-outline-primary">
-                        Learn More
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- Service 5 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-
-                        <i class="fa-solid fa-face-smile"></i>
-
-                    </div>
-
-                    <h4>Stress Management</h4>
-
-                    <p>
-                        Practical strategies to reduce stress and improve
-                        emotional resilience.
-                    </p>
-
-                    <a href="#" class="btn btn-outline-primary">
-                        Learn More
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- Service 6 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-
-                        <i class="fa-solid fa-laptop-medical"></i>
-
-                    </div>
-
-                    <h4>Online Consultation</h4>
-
-                    <p>
-                        Convenient and confidential online counselling sessions
-                        from anywhere.
-                    </p>
-
-                    <a href="#" class="btn btn-outline-primary">
-                        Learn More
-                    </a>
-
-                </div>
-
-            </div>
+            {% endfor %}
 
         </div>
 
