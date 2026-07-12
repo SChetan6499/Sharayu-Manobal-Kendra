@@ -215,3 +215,60 @@ footer{
     margin-bottom:12px;
     font-size:18px;
 }
+
+/* ==========================================
+   WHY CHOOSE US
+========================================== */
+
+.why-choose-us{
+    background:#F7FAFC;
+}
+
+.feature-card{
+
+    background:#fff;
+
+    padding:35px 25px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 35px rgba(0,0,0,.12);
+
+}
+
+.feature-card i{
+
+    font-size:50px;
+
+    color:#2B6CB0;
+
+    margin-bottom:20px;
+
+}
+
+.feature-card h5{
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+    color:#666;
+
+    margin-bottom:0;
+
+}

@@ -62,3 +62,13 @@
     }
 
 }
+
+@media(max-width:768px){
+
+    .feature-card{
+
+        margin-bottom:20px;
+
+    }
+
+}
