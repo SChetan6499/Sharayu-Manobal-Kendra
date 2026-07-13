@@ -1,0 +1,117 @@
+<section class="testimonial-section py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-subtitle">
+                Testimonials
+            </span>
+
+            <h2 class="section-title">
+                What Our Clients Say
+            </h2>
+
+        </div>
+
+        {% if testimonials %}
+
+        <div id="testimonialCarousel"
+             class="carousel slide"
+             data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                {% for testimonial in testimonials %}
+
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+
+                    <div class="card shadow border-0">
+
+                        <div class="card-body text-center p-5">
+
+                            {% if testimonial.photo %}
+
+                            <img src="{{ testimonial.photo.url }}"
+                                 class="rounded-circle mb-3"
+                                 width="120"
+                                 height="120"
+                                 alt="{{ testimonial.name }}">
+
+                            {% endif %}
+
+                            <h4>{{ testimonial.name }}</h4>
+
+                            <p class="text-muted">
+
+                                {{ testimonial.designation }}
+
+                            </p>
+
+                            <div class="mb-3">
+
+                                {% for i in "12345" %}
+
+                                    {% if forloop.counter <= testimonial.rating %}
+
+                                        <i class="fa-solid fa-star text-warning"></i>
+
+                                    {% else %}
+
+                                        <i class="fa-regular fa-star text-warning"></i>
+
+                                    {% endif %}
+
+                                {% endfor %}
+
+                            </div>
+
+                            <p class="lead">
+
+                                "{{ testimonial.review }}"
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+
+            </button>
+
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+
+            </button>
+
+        </div>
+
+        {% else %}
+
+        <div class="alert alert-info text-center">
+
+            No testimonials available.
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>

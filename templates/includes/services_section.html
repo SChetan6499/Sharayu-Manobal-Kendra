@@ -14,8 +14,9 @@
             </h2>
 
             <p class="lead">
-                We provide a wide range of counselling and psychological services
-                designed to support emotional well-being and personal growth.
+                We provide a wide range of counselling and psychological
+                services designed to support emotional well-being,
+                personal growth, and a healthier life.
             </p>
 
         </div>
@@ -29,22 +30,27 @@
 
                 <div class="service-card">
 
+                    <!-- Icon -->
                     <div class="service-icon">
 
                         <i class="{{ service.icon }}"></i>
 
                     </div>
 
+                    <!-- Image (Optional) -->
                     {% if service.image %}
                     <img src="{{ service.image.url }}"
-                         class="img-fluid rounded mb-3"
-                         alt="{{ service.title }}">
+                         alt="{{ service.title }}"
+                         class="img-fluid rounded mb-3">
                     {% endif %}
 
+                    <!-- Title -->
                     <h4>{{ service.title }}</h4>
 
+                    <!-- Description -->
                     <p>{{ service.short_description }}</p>
 
+                    <!-- Button -->
                     <a href="#" class="btn btn-outline-primary">
                         Learn More
                     </a>
@@ -59,9 +65,11 @@
 
                 <div class="alert alert-warning text-center">
 
-                    <h5>No Services Found</h5>
+                    <h4>No Services Available</h4>
 
-                    <p>Please add services from the Django Admin Panel.</p>
+                    <p>
+                        Please add services from the Django Admin Panel.
+                    </p>
 
                 </div>
 
