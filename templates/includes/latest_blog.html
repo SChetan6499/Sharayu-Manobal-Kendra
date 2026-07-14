@@ -1,0 +1,81 @@
+<section class="py-5 bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<span class="section-subtitle">
+
+Latest Blogs
+
+</span>
+
+<h2 class="section-title">
+
+Mental Health Articles
+
+</h2>
+
+</div>
+
+<div class="row">
+
+{% for blog in latest_blogs %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card h-100 shadow">
+
+{% if blog.image %}
+
+<img src="{{ blog.image.url }}"
+class="card-img-top">
+
+{% endif %}
+
+<div class="card-body">
+
+<h4>
+
+{{ blog.title }}
+
+</h4>
+
+<p>
+
+{{ blog.short_description }}
+
+</p>
+
+<a href="{{ blog.get_absolute_url }}"
+class="btn btn-primary">
+
+Read More
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% empty %}
+
+<div class="col-12">
+
+<div class="alert alert-info">
+
+No blogs available.
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>

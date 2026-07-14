@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Blogs
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <h1 class="text-center mb-5">
+        Our Blogs
+    </h1>
+
+    <div class="row">
+
+        {% for blog in blogs %}
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card h-100 shadow">
+
+                {% if blog.image %}
+                    <img src="{{ blog.image.url }}"
+                         class="card-img-top"
+                         alt="{{ blog.title }}">
+                {% endif %}
+
+                <div class="card-body">
+
+                    <h4>{{ blog.title }}</h4>
+
+                    <p>{{ blog.short_description }}</p>
+
+                    <a href="{{ blog.get_absolute_url }}"
+                       class="btn btn-primary">
+
+                        Read More
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="col-12">
+
+            <div class="alert alert-info">
+
+                No blogs available.
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
