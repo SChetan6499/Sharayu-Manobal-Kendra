@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+About Us
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Banner -->
+<section class="bg-primary text-white py-5">
+
+    <div class="container text-center">
+
+        <h1>About Sharayu Manobal Kendra</h1>
+
+        <p class="lead">
+            Your trusted partner in mental wellness and emotional well-being.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- About Section -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <img
+                    src="{% static 'images/about.jpg' %}"
+                    class="img-fluid rounded shadow"
+                    alt="About">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <h2>Who We Are</h2>
+
+                <p>
+
+                    Sharayu Manobal Kendra provides compassionate,
+                    confidential and professional counselling services for
+                    individuals, couples, children and families.
+
+                </p>
+
+                <p>
+
+                    We believe that mental health is just as important as
+                    physical health. Our mission is to provide guidance,
+                    support and practical solutions that help people lead
+                    happier and healthier lives.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Mission Vision -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-md-4">
+
+                <div class="card shadow h-100">
+
+                    <div class="card-body">
+
+                        <h3>Mission</h3>
+
+                        <p>
+                            To provide accessible and compassionate mental
+                            health support.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card shadow h-100">
+
+                    <div class="card-body">
+
+                        <h3>Vision</h3>
+
+                        <p>
+                            To become a trusted counselling centre that
+                            empowers every individual.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card shadow h-100">
+
+                    <div class="card-body">
+
+                        <h3>Values</h3>
+
+                        <p>
+                            Empathy, Confidentiality, Respect and Professionalism.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Counsellor -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2>Meet Our Counsellor</h2>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8 text-center">
+
+                <img
+                    src="{% static 'images/profile/profile.jpg' %}"
+                    width="220"
+                    class="rounded-circle shadow mb-4"
+                    alt="Counsellor">
+
+                <h3>Dr. Sharayu</h3>
+
+                <p class="text-muted">
+
+                    Clinical Psychologist & Counsellor
+
+                </p>
+
+                <p>
+
+                    Dedicated to helping people overcome emotional,
+                    behavioural and psychological challenges through
+                    evidence-based counselling and compassionate care.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="bg-primary text-white py-5">
+
+    <div class="container text-center">
+
+        <h2>
+
+            Ready to Begin Your Wellness Journey?
+
+        </h2>
+
+        <p>
+
+            Book an appointment today and take the first step toward
+            better mental health.
+
+        </p>
+
+        <a
+            href="{% url 'appointment' %}"
+            class="btn btn-light btn-lg">
+
+            Book Appointment
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

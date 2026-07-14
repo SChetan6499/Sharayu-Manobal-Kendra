@@ -36,3 +36,10 @@ def home(request):
         "core/home.html",
         context
     )
+    
+def about(request):
+
+    return render(
+        request,
+        "about/about.html"
+    )
