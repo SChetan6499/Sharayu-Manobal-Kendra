@@ -43,3 +43,15 @@ def about(request):
         request,
         "about/about.html"
     )
+    
+def services(request):
+
+    services = Service.objects.filter(is_active=True)
+
+    return render(
+        request,
+        "services/services.html",
+        {
+            "services": services
+        }
+    )

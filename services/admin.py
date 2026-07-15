@@ -9,17 +9,12 @@ class ServiceAdmin(admin.ModelAdmin):
         "title",
         "display_order",
         "is_active",
-        "created_at",
     )
 
-    list_filter = (
-        "is_active",
-    )
+    prepopulated_fields = {
+        "slug": ("title",)
+    }
 
     search_fields = (
         "title",
-    )
-
-    ordering = (
-        "display_order",
     )
