@@ -1,5 +1,7 @@
 {% load static %}
 
+{% with current=request.resolver_match.url_name %}
+
 <!-- ==========================
      TOP CONTACT BAR
 =========================== -->
@@ -33,13 +35,13 @@
      MAIN NAVBAR
 =========================== -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
 
     <div class="container">
 
         <!-- Logo -->
 
-        <a class="navbar-brand d-flex align-items-center" href="/">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
 
             <img
                 src="{% static 'images/logo.jpeg' %}"
@@ -84,43 +86,50 @@
             <ul class="navbar-nav ms-auto align-items-lg-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/">
+                    <a class="nav-link {% if current == 'home' %}active fw-bold text-primary{% endif %}"
+                       href="{% url 'home' %}">
                         Home
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">
+                    <a class="nav-link {% if current == 'about' %}active fw-bold text-primary{% endif %}"
+                       href="{% url 'about' %}">
                         About
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'services' %}">
+                    <a class="nav-link {% if current == 'services' %}active fw-bold text-primary{% endif %}"
+                       href="{% url 'services' %}">
                         Services
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'gallery' %}">
+                    <a class="nav-link {% if current == 'gallery' %}active fw-bold text-primary{% endif %}"
+                       href="{% url 'gallery' %}">
                         Gallery
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'blog_list' %}">
+                    <a class="nav-link {% if current == 'blog_list' %}active fw-bold text-primary{% endif %}"
+                       href="{% url 'blog_list' %}">
                         Blogs
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'appointment' %}">
+                    <a class="nav-link {% if current == 'appointment' %}active fw-bold text-primary{% endif %}"
+                       href="{% url 'appointment' %}">
                         Appointment
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">
+                    <a class="nav-link {% if current == 'contact' %}active fw-bold text-primary{% endif %}"
+                       href="{% url 'contact' %}">
                         Contact
                     </a>
                 </li>
@@ -146,3 +155,5 @@
     </div>
 
 </nav>
+
+{% endwith %}

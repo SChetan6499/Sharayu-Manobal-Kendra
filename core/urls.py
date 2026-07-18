@@ -8,5 +8,10 @@ urlpatterns = [
     path("about/", views.about, name="about"),
 
     path("services/", views.services, name="services"),
+    path(
+    "robots.txt",
+    views.robots_txt,
+    name="robots_txt",
+),
 
 ]

@@ -55,3 +55,10 @@ def services(request):
             "services": services
         }
     )
+    
+def robots_txt(request):
+    return render(
+        request,
+        "robots.txt",
+        content_type="text/plain",
+    )
