@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Gallery
+{% endblock %}
+
+{% block content %}
+
+<section class="bg-primary text-white py-5">
+
+    <div class="container text-center">
+
+        <h1>Gallery</h1>
+
+        <p class="lead">
+
+            Moments from Sharayu Manobal Kendra
+
+        </p>
+
+    </div>
+
+</section>
+
+<section class="container py-5">
+
+    <div class="row g-4">
+
+        {% for image in images %}
+
+        <div class="col-md-4">
+
+            <div class="card shadow h-100">
+
+                <img
+                    src="{{ image.image.url }}"
+                    class="card-img-top"
+                    style="height:250px; object-fit:cover;"
+                    alt="{{ image.title }}">
+
+                <div class="card-body">
+
+                    <h5>{{ image.title }}</h5>
+
+                    <p class="text-muted">
+
+                        {{ image.category }}
+
+                    </p>
+
+                    <p>
+
+                        {{ image.description }}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="col-12">
+
+            <div class="alert alert-info text-center">
+
+                No gallery images available.
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

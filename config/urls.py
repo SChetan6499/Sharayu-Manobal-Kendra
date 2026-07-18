@@ -12,6 +12,12 @@ urlpatterns = [
     path("blogs/", include("blogs.urls")),
 
     path("appointment/", include("appointments.urls")),
+    
+    path("contact/", include("contactus.urls")),
+    path(
+    "gallery/",
+    include("gallery.urls")
+),
 ]
 
 if settings.DEBUG:
