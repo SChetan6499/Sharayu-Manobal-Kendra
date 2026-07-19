@@ -29,7 +29,7 @@ from .forms import ContactForm
 
 
 def contact(request):
-    return render(request, "contactus/contact.html")
+    return render(request, "contact/contact.html")
 
 def contact_success(request):
 
