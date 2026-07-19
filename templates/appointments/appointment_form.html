@@ -1,3 +1,7 @@
+
+
+
+
 {% extends 'base.html' %}
 
 {% block title %}Book Appointment{% endblock %}
@@ -14,80 +18,37 @@
 
                 <div class="card-body p-5">
 
-                    <h2 class="text-center mb-4">
+                    <h2 class="text-center mb-3">
                         Book Your Appointment
                     </h2>
 
-                    <p class="text-center text-muted mb-5">
+                    <p class="text-center text-muted mb-4">
                         We are here to help you on your journey toward better mental health.
                     </p>
 
-                    <form method="POST">
+                    <div class="alert alert-info border-0 shadow-sm mb-4">
+                        <h5 class="mb-3">
+                            <i class="fa-solid fa-circle-info me-2"></i>
+                            Appointment Instructions
+                        </h5>
 
-                        {% csrf_token %}
+                        <ul class="mb-0">
+                            <li>Please fill in all required details.</li>
+                            <li>Select your preferred appointment date and time.</li>
+                            <li>Our team will contact you to confirm your appointment.</li>
+                            <!-- <li>If you need urgent assistance, please call us directly.</li> -->
+                        </ul>
+                    </div>
 
-                        <div class="row">
+                    <!-- Google Form Starts Here -->
 
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Full Name</label>
-                                {{ form.name }}
-                            </div>
+                    <div class="ratio" style="--bs-aspect-ratio: 180%;">
 
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Age</label>
-                                {{ form.age }}
-                            </div>
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeE7HCfcYT2wMCYXDBVMIhv3OBS1sdUvnIUBBsGND2IQhlrEQ/viewform?embedded=true" width="640" height="1930" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Gender</label>
-                                {{ form.gender }}
-                            </div>
+                    </div>
 
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Consultation Type</label>
-                                {{ form.consultation_type }}
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Mobile Number</label>
-                                {{ form.phone }}
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Email Address</label>
-                                {{ form.email }}
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Appointment Date</label>
-                                {{ form.appointment_date }}
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Appointment Time</label>
-                                {{ form.appointment_time }}
-                            </div>
-
-                            <div class="col-12 mb-4">
-                                <label class="form-label">Describe Your Concern</label>
-                                {{ form.problem }}
-                            </div>
-
-                        </div>
-
-                        <div class="text-center">
-
-                            <button class="btn btn-primary btn-lg px-5">
-
-                                <i class="fa-solid fa-calendar-check me-2"></i>
-
-                                Book Appointment
-
-                            </button>
-
-                        </div>
-
-                    </form>
+                    <!-- Google Form Ends Here -->
 
                 </div>
 
