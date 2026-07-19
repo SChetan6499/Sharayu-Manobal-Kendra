@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
-
+from django.core.mail import send_mail, get_connection
 from .forms import AppointmentForm
 
 
