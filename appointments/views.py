@@ -16,7 +16,8 @@ def appointment(request):
             appointment = form.save()
 
             try:
-
+                print("EMAIL_HOST_USER:", settings.EMAIL_HOST_USER)
+                print("PASSWORD EXISTS:", bool(settings.EMAIL_HOST_PASSWORD))
                 # ==========================================
                 # Email to Patient
                 # ==========================================
