@@ -16,6 +16,10 @@ def appointment(request):
             appointment = form.save()
 
             try:
+                connection = get_connection(timeout=10)
+                connection.open()
+                print("SMTP Connected Successfully")
+                connection.close()
                 print("EMAIL_HOST_USER:", settings.EMAIL_HOST_USER)
                 print("PASSWORD EXISTS:", bool(settings.EMAIL_HOST_PASSWORD))
                 # ==========================================
@@ -105,7 +109,7 @@ def appointment(request):
 #                 )
 
             except Exception as e:
-
+                print("SMTP ERROR:", repr(e))    
                 print("Email Error:", e)
 
             return redirect("appointment_success")
