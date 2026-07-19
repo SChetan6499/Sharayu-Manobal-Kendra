@@ -22,87 +22,87 @@ def appointment(request):
                 # Email to Patient
                 # ==========================================
 
-                send_mail(
-                    subject="Appointment Confirmation - Sharayu Manobal Kendra",
+#                 send_mail(
+#                     subject="Appointment Confirmation - Sharayu Manobal Kendra",
 
-                    message=f"""
-Dear {appointment.name},
+#                     message=f"""
+# Dear {appointment.name},
 
-Thank you for booking your appointment with Sharayu Manobal Kendra.
+# Thank you for booking your appointment with Sharayu Manobal Kendra.
 
-Your appointment has been received successfully.
+# Your appointment has been received successfully.
 
-Appointment Details
-----------------------------
+# Appointment Details
+# ----------------------------
 
-Date : {appointment.appointment_date}
+# Date : {appointment.appointment_date}
 
-Time : {appointment.appointment_time}
+# Time : {appointment.appointment_time}
 
-Consultation : {appointment.consultation_type}
+# Consultation : {appointment.consultation_type}
 
-Our counsellor will contact you shortly to confirm your appointment.
+# Our counsellor will contact you shortly to confirm your appointment.
 
-Thank you for choosing us.
+# Thank you for choosing us.
 
-Regards,
+# Regards,
 
-Sharayu Manobal Kendra
-""",
+# Sharayu Manobal Kendra
+# """,
 
-                    from_email=settings.DEFAULT_FROM_EMAIL,
+#                     from_email=settings.DEFAULT_FROM_EMAIL,
 
-                    recipient_list=[appointment.email],
+#                     recipient_list=[appointment.email],
 
-                    fail_silently=False,
-                )
+#                     fail_silently=False,
+#                 )
 
-                # ==========================================
-                # Email to Counsellor / Admin
-                # ==========================================
+#                 # ==========================================
+#                 # Email to Counsellor / Admin
+#                 # ==========================================
 
-                send_mail(
-                    subject="🔔 New Appointment Booking",
+#                 send_mail(
+#                     subject="🔔 New Appointment Booking",
 
-                    message=f"""
-A new appointment has been booked.
+#                     message=f"""
+# A new appointment has been booked.
 
-----------------------------------------
+# ----------------------------------------
 
-Patient Name : {appointment.name}
+# Patient Name : {appointment.name}
 
-Age : {appointment.age}
+# Age : {appointment.age}
 
-Gender : {appointment.gender}
+# Gender : {appointment.gender}
 
-Phone : {appointment.phone}
+# Phone : {appointment.phone}
 
-Email : {appointment.email}
+# Email : {appointment.email}
 
-Consultation : {appointment.consultation_type}
+# Consultation : {appointment.consultation_type}
 
-Appointment Date : {appointment.appointment_date}
+# Appointment Date : {appointment.appointment_date}
 
-Appointment Time : {appointment.appointment_time}
+# Appointment Time : {appointment.appointment_time}
 
-----------------------------------------
+# ----------------------------------------
 
-Problem Description
+# Problem Description
 
-{appointment.problem}
+# {appointment.problem}
 
-----------------------------------------
+# ----------------------------------------
 
-Please log in to the Django Admin panel to review and manage this appointment.
-""",
+# Please log in to the Django Admin panel to review and manage this appointment.
+# """,
 
-                    from_email=settings.DEFAULT_FROM_EMAIL,
+#                     from_email=settings.DEFAULT_FROM_EMAIL,
 
-                    # Change this later to your clinic email if needed
-                    recipient_list=[settings.EMAIL_HOST_USER],
+#                     # Change this later to your clinic email if needed
+#                     recipient_list=[settings.EMAIL_HOST_USER],
 
-                    fail_silently=False,
-                )
+#                     fail_silently=False,
+#                 )
 
             except Exception as e:
 
