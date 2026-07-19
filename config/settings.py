@@ -24,11 +24,11 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = os.getenv(
-    "ALLOWED_HOSTS",
-    "127.0.0.1,localhost",
-    "sharayumanobalkendra.in",
+    # "ALLOWED_HOSTS",
+    # "127.0.0.1,localhost",
+    # "sharayumanobalkendra.in",
     "www.sharayumanobalkendra.in",
-    ".onrender.com"
+    ".onrender.com",
 ).split(",")
 
 # --------------------------------------------------
