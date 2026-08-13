@@ -10,20 +10,14 @@
     <div class="container">
 
         <div class="d-flex justify-content-between align-items-center flex-wrap">
-
             <div>
-                <i class="fa-solid fa-phone"></i>
-                +91 98765 43210
-            </div>
-
-            <div>
-                <i class="fa-solid fa-envelope"></i>
-                info@sharayumanobal.com
+                <i class="fa-solid fa-heart"></i>
+                Your Mental Wellness Matters
             </div>
 
             <div>
                 <i class="fa-solid fa-clock"></i>
-                Mon - Sat | 9:00 AM - 7:00 PM
+                Mon - Sat | 10:00 AM - 6:00 PM
             </div>
 
         </div>
@@ -43,11 +37,7 @@
 
         <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
 
-            <img
-                src="{% static 'images/logo.jpeg' %}"
-                alt="Sharayu Manobal Kendra"
-                width="55"
-                height="55"
+            <img src="{% static 'images/logo.jpeg' %}" alt="Sharayu Manobal Kendra" width="55" height="55"
                 class="me-2 rounded-circle">
 
             <div>
@@ -57,7 +47,7 @@
                 </h5>
 
                 <small class="text-muted">
-                    Mental Wellness Centre
+                    Psychological Consultancy Services
                 </small>
 
             </div>
@@ -66,14 +56,8 @@
 
         <!-- Mobile Toggle -->
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 
             <span class="navbar-toggler-icon"></span>
 
@@ -87,58 +71,56 @@
 
                 <li class="nav-item">
                     <a class="nav-link {% if current == 'home' %}active fw-bold text-primary{% endif %}"
-                       href="{% url 'home' %}">
+                        href="{% url 'home' %}">
                         Home
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link {% if current == 'about' %}active fw-bold text-primary{% endif %}"
-                       href="{% url 'about' %}">
+                        href="{% url 'about' %}">
                         About
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link {% if current == 'services' %}active fw-bold text-primary{% endif %}"
-                       href="{% url 'services' %}">
+                        href="{% url 'services' %}">
                         Services
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link {% if current == 'gallery' %}active fw-bold text-primary{% endif %}"
-                       href="{% url 'gallery' %}">
+                        href="{% url 'gallery' %}">
                         Gallery
                     </a>
-                </li>
+                </li> -->
 
                 <li class="nav-item">
                     <a class="nav-link {% if current == 'blog_list' %}active fw-bold text-primary{% endif %}"
-                       href="{% url 'blog_list' %}">
+                        href="{% url 'blog_list' %}">
                         Blogs
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link {% if current == 'appointment' %}active fw-bold text-primary{% endif %}"
-                       href="{% url 'appointment' %}">
+                        href="{% url 'appointment' %}">
                         Appointment
                     </a>
-                </li>
+                </li> -->
 
                 <li class="nav-item">
                     <a class="nav-link {% if current == 'contact' %}active fw-bold text-primary{% endif %}"
-                       href="{% url 'contact' %}">
+                        href="{% url 'contact' %}">
                         Contact
                     </a>
                 </li>
 
-                <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                <!-- <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
 
-                    <a
-                        href="{% url 'appointment' %}"
-                        class="btn btn-primary rounded-pill px-4">
+                    <a href="{% url 'appointment' %}" class="btn btn-primary rounded-pill px-4">
 
                         <i class="fa-solid fa-calendar-check me-2"></i>
 
@@ -146,7 +128,7 @@
 
                     </a>
 
-                </li>
+                </li> -->
 
             </ul>
 
