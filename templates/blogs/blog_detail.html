@@ -2,9 +2,7 @@
 
 {% load static %}
 
-{% block title %}
-{{ blog.title }}
-{% endblock %}
+{% block title %}{{ blog.title }}{% endblock %}
 
 {% block content %}
 
@@ -14,33 +12,33 @@
 
         <div class="col-lg-10">
 
-            {% if blog.image %}
-                <img src="{{ blog.image.url }}"
-                     class="img-fluid rounded shadow mb-4"
-                     alt="{{ blog.title }}">
-            {% endif %}
+            <div class="blog-layout">
 
-            <h1 class="mb-3">{{ blog.title }}</h1>
+                <div class="blog-text-col">
+                    {% if blog.image %}
+                    <img id="blog-main-image" src="{{ blog.image.url }}" class="blog-floated-image rounded shadow mb-3"
+                        alt="{{ blog.title }}">
+                    {% endif %}
 
-            <p class="text-muted">
-                <strong>Author:</strong> {{ blog.author }}
-                |
-                <strong>Published:</strong> {{ blog.created_at|date:"d M Y" }}
-            </p>
+                    <h1 class="mb-3">{{ blog.title }}</h1>
 
-            <hr>
+                    <p class="text-muted">
+                        <strong>Author:</strong> {{ blog.author }}
+                        |
+                        <strong>Published:</strong> {{ blog.created_at|date:"d M Y" }}
+                    </p>
 
-            <div class="blog-content">
+                    <hr>
 
-                {{ blog.content|linebreaks }}
+                    <div class="blog-content">
+                        {{ blog.content|linebreaks }}
+                    </div>
 
-            </div>
+                    <div class="mt-4">
+                        <a href="{% url 'blog_list' %}" class="btn btn-primary">← Back to Blogs</a>
+                    </div>
 
-            <div class="mt-5">
-
-                <a href="{% url 'blog_list' %}" class="btn btn-primary">
-                    ← Back to Blogs
-                </a>
+                </div>
 
             </div>
 
@@ -49,5 +47,24 @@
     </div>
 
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var img = document.getElementById('blog-main-image');
+        if (!img) return;
+        function applyOrientation() {
+            var isLandscape = img.naturalWidth >= img.naturalHeight;
+            if (isLandscape) {
+                img.classList.remove('float-md-start');
+                img.classList.add('float-md-end');
+            } else {
+                img.classList.remove('float-md-end');
+                img.classList.add('float-md-start');
+            }
+        }
+        if (img.complete && img.naturalWidth) applyOrientation();
+        else img.addEventListener('load', applyOrientation);
+    });
+</script>
 
 {% endblock %}

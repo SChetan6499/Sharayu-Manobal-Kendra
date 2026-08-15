@@ -6,39 +6,27 @@
 
         <div class="row align-items-center">
 
-            <!-- Left -->
+            <!-- Hero content (centered) -->
 
-            <div class="col-lg-6">
+            <div class="col-12 col-md-10 col-lg-8 mx-auto text-center hero-content">
 
                 <span class="hero-subtitle">
                     Welcome to Sharayu Manobal Kendra
                 </span>
 
-                <h1>
-                    Get it Done Here!
-                    <br>
-                </h1>
+                <h1 class="hero-title">Get it Done Here!</h1>
 
-                <p>
-                    consultancy services to bring your potential into reality.
-                </p>
+                <p class="hero-lead">Consultancy services to bring your potential into reality.</p>
 
                 <div class="hero-buttons">
-                    <a href="{% url 'services' %}" class="btn btn-primary">
+                    <a href="{% url 'services' %}" class="btn btn-primary btn-lg">
                         Our Services
                     </a>
-
                 </div>
 
             </div>
 
-            <!-- Right -->
-
-            <div class="col-lg-6 text-center">
-
-                <img src="{% static 'images/cn1.jpeg' %}" class="img-fluid hero-image" alt="Psychologist">
-
-            </div>
+            <!-- Right column removed (no hero image) -->
 
         </div>
 
