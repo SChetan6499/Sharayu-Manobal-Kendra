@@ -75,6 +75,19 @@ footer{
     border-radius:50%;
 }
 
+.navbar-brand .brand-title{
+    line-height:1.2;
+}
+
+.navbar-brand .brand-subtitle{
+    display:block;
+    font-size:0.72rem;
+    line-height:1.3;
+    color:#64748b;
+    white-space:normal;
+    max-width:220px;
+}
+
 .card{
     border-radius:20px;
 }
@@ -817,6 +830,19 @@ footer ul li{
 
         justify-content:center !important;
 
+    }
+
+    .navbar-brand img{
+        width:46px;
+        height:46px;
+    }
+
+    .navbar-brand .brand-title{
+        font-size:1rem;
+    }
+
+    .navbar-brand .brand-subtitle{
+        font-size:0.78rem;
     }
 
 }               
